@@ -5,10 +5,8 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
-import android.os.Build
 import android.util.AttributeSet
 import android.view.View
-import androidx.annotation.RequiresApi
 
 class Practice10HistogramView @JvmOverloads constructor(
     context: Context,
@@ -34,7 +32,6 @@ class Practice10HistogramView @JvmOverloads constructor(
     private val reatWidth = dp2px(40f).toInt()
     private val divider = dp2px(10f)
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 //        综合练习

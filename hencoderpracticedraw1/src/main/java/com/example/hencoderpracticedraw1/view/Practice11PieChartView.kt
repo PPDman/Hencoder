@@ -2,10 +2,8 @@ package com.example.hencoderpracticedraw1.view
 
 import android.content.Context
 import android.graphics.*
-import android.os.Build
 import android.util.AttributeSet
 import android.view.View
-import androidx.annotation.RequiresApi
 
 class Practice11PieChartView @JvmOverloads constructor(
     context: Context,
