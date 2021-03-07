@@ -12,8 +12,19 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Hencoder.base" />
-            <option value="$PROJECT_DIR$/hencoderpracticedraw1" />
+            <option value="$PROJECT_DIR$/base" />
+            <option value="$PROJECT_DIR$/practicedraw01" />
+            <option value="$PROJECT_DIR$/practicedraw02" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$USER_HOME$/Downloads/PracticeDraw2-master/app" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$USER_HOME$/Downloads/PracticeDraw2-master/app" />
           </set>
         </option>
       </GradleProjectSettings>

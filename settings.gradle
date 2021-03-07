@@ -1,3 +1,4 @@
-include ':hencoderpracticedraw1'
-include ':Hencoder.base'
+include ':practicedraw01'
+include ':practicedraw02'
+include ':base'
 rootProject.name = "Hencoder"
