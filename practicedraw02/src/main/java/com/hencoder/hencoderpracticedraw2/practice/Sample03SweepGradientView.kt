@@ -1,4 +1,4 @@
-package com.hencoder.hencoderpracticedraw2.kotlin
+package com.hencoder.hencoderpracticedraw2.practice
 
 import android.content.Context
 import android.graphics.*
@@ -14,7 +14,7 @@ class Sample03SweepGradientView @JvmOverloads constructor(
     private val paint by lazy {
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
         paint.shader = SweepGradient(
-            100f, 100f, Color.parseColor("#E91E63"),
+            300f, 300f, Color.parseColor("#E91E63"),
             Color.parseColor("#2196F3"))
         paint
     }

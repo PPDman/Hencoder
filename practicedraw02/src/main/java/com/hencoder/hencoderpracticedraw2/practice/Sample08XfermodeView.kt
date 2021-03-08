@@ -1,4 +1,4 @@
-package com.hencoder.hencoderpracticedraw2.kotlin
+package com.hencoder.hencoderpracticedraw2.practice
 
 import android.content.Context
 import android.graphics.*
@@ -12,9 +12,9 @@ class Sample08XfermodeView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : View(context, attributeSet, defStyleAttr) {
     private val paint=Paint(Paint.ANTI_ALIAS_FLAG)
-    private val xfermode1=PorterDuffXfermode(PorterDuff.Mode.SRC)
-    private val xfermode2=PorterDuffXfermode(PorterDuff.Mode.DST_IN)
-    private val xfermode3=PorterDuffXfermode(PorterDuff.Mode.DST_OUT)
+    private val xfermode1 by lazy { PorterDuffXfermode(PorterDuff.Mode.SRC) }
+    private val xfermode2 by lazy { PorterDuffXfermode(PorterDuff.Mode.DST_IN) }
+    private val xfermode3 by lazy { PorterDuffXfermode(PorterDuff.Mode.DST_OUT) }
 
     private val bitmap1 by lazy {
         val bitmap=BitmapFactory.decodeResource(resources,R.drawable.batman)

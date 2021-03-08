@@ -1,12 +1,11 @@
-package com.hencoder.hencoderpracticedraw2.kotlin
+package com.hencoder.hencoderpracticedraw2.practice
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import com.hencoder.hencoderpracticedraw2.R
 
-class Sample04BitmapShaderView @JvmOverloads constructor(
+class Sample01LinearGradientView @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -14,15 +13,16 @@ class Sample04BitmapShaderView @JvmOverloads constructor(
 
     private val paint by lazy {
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        val bitmap=BitmapFactory.decodeResource(resources, R.drawable.batman)
-        paint.shader = BitmapShader(bitmap,Shader.TileMode.CLAMP,
-        Shader.TileMode.CLAMP)
+        paint.shader = LinearGradient(
+            100f, 100f, 500f, 500f, Color.parseColor("#E91E63"),
+            Color.parseColor("#2196F3"), Shader.TileMode.CLAMP
+        )
         paint
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        canvas.drawCircle(200f, 200f, 200f, paint)
+        canvas.drawCircle(300f, 300f, 200f, paint)
     }
 }

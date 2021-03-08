@@ -1,4 +1,4 @@
-package com.hencoder.hencoderpracticedraw2.kotlin
+package com.hencoder.hencoderpracticedraw2.practice
 
 import android.content.Context
 import android.graphics.*
