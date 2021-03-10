@@ -1,3 +1,7 @@
+include ':practicelayout01'
+include ':practicedraw07'
+include ':practicedraw06'
+include ':practicedraw05'
 include ':practicedraw04'
 include ':practicedraw03'
 include ':practicedraw02'
