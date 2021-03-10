@@ -36,7 +36,7 @@ class Practice14FlipboardView : View {
     }
 
     fun setDegree(degree: Int) {
-        this.degree = degree/1f
+        this.degree = degree.toFloat()
         invalidate()
     }
 
@@ -44,19 +44,33 @@ class Practice14FlipboardView : View {
         super.onDraw(canvas)
         val bitmapWidth = bitmap!!.width
         val bitmapHeight = bitmap!!.height
-        val centerX = width / 2
-        val centerY = height / 2
-        val x = centerX - bitmapWidth / 2
-        val y = centerY - bitmapHeight / 2
+        val centerX = width / 2f
+        val centerY = height / 2f
+        val x = centerX - bitmapWidth / 2f
+        val y = centerY - bitmapHeight / 2f
 
+       //绘制上部分
         canvas.save()
+        canvas.clipRect(0f, 0f, width.toFloat(), centerY)
+        canvas.drawBitmap(bitmap!!, x, y, paint)
+        canvas.restore()
+
+        //绘制下部分
+        canvas.save()
+
+        if (degree<90){
+            canvas.clipRect(0f, centerY, width.toFloat(), height.toFloat())
+        }else{
+            canvas.clipRect(0f, 0f, width.toFloat(), centerY)
+        }
         camera.save()
-        camera.rotateX(degree.toFloat())
-        canvas.translate(centerX.toFloat(), centerY.toFloat())
+        camera.rotateX(degree)
+        canvas.translate(centerX,centerY)
         camera.applyToCanvas(canvas)
-        canvas.translate(-centerX.toFloat(), -centerY.toFloat())
+        canvas.translate(-centerX, -centerY)
         camera.restore()
-        canvas.drawBitmap(bitmap!!, x.toFloat(), y.toFloat(), paint)
+
+        canvas.drawBitmap(bitmap!!,x,y,paint)
         canvas.restore()
     }
 

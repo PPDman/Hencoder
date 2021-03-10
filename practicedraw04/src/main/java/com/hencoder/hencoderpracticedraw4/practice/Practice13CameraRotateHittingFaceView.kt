@@ -38,7 +38,7 @@ class Practice13CameraRotateHittingFaceView : View {
     }
 
     fun setDegree(degree: Int) {
-        this.degree = degree/1f
+        this.degree = degree.toFloat()
         invalidate()
     }
 
@@ -52,7 +52,7 @@ class Practice13CameraRotateHittingFaceView : View {
 
         camera.save()
         mMatrix.reset()
-        camera.rotateX(degree.toFloat())
+        camera.rotateX(-degree)
         camera.getMatrix(mMatrix)
         camera.restore()
         mMatrix.preTranslate(-centerX.toFloat(), -centerY.toFloat())
@@ -75,6 +75,6 @@ class Practice13CameraRotateHittingFaceView : View {
 
         val displayMetrics = resources.displayMetrics
         val newZ = displayMetrics.density * 6
-        camera.setLocation(0f,0f,newZ)
+        camera.setLocation(0f, 0f, newZ)
     }
 }
