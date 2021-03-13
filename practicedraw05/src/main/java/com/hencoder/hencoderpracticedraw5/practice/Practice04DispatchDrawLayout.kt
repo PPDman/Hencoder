@@ -20,11 +20,14 @@ class Practice04DispatchDrawLayout : LinearLayout {
     ) {
     }
 
+    override fun dispatchDraw(canvas: Canvas) {
+        super.dispatchDraw(canvas)
+        pattern.draw(canvas)
+    }
     // 把 onDraw() 换成 dispatchDraw()，让绘制内容可以盖住子 View
     // 另外，在改完之后，上面的 setWillNotDraw(false) 也可以删了
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        pattern.draw(canvas)
     }
 
     inner class Pattern {

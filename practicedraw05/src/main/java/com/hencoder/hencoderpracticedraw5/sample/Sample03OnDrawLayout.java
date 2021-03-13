@@ -31,11 +31,11 @@ public class Sample03OnDrawLayout extends LinearLayout {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-
+    protected void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
         pattern.draw(canvas);
     }
+
 
     private class Pattern {
         private static final float PATTERN_RATIO = 5f / 6;

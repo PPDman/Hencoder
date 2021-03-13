@@ -2,6 +2,7 @@ package com.hencoder.hencoderpracticedraw5.practice
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.util.AttributeSet
 import androidx.annotation.Nullable
 import androidx.appcompat.widget.AppCompatEditText
@@ -16,10 +17,10 @@ class Practice08BeforeDrawView : AppCompatEditText {
     ) {
     }
 
-    override  fun draw(canvas: Canvas?) {
+    override  fun draw(canvas: Canvas) {
         // 在 super.draw() 的上方插入绘制代码，让绘制内容被其他所有内容盖住
         // 由于这期的重点是绘制代码的位置而不是绘制代码本身，所以直接给出绘制代码，你只要解除注释就好
-//        canvas.drawColor(Color.parseColor("#66BB6A")); // 涂上绿色
+        canvas.drawColor(Color.parseColor("#66BB6A")); // 涂上绿色
         super.draw(canvas)
     }
 }
