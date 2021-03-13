@@ -1,4 +1,4 @@
-//include ':practicelayout01'
+include ':practicelayout01'
 include ':practicedraw07'
 include ':practicedraw06'
 include ':practicedraw05'

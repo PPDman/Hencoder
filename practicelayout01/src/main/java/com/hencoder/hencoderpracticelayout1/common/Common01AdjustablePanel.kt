@@ -39,9 +39,9 @@ class Common01AdjustablePanel : RelativeLayout {
                 val layoutParams: RelativeLayout.LayoutParams =
                     parentLayout?.layoutParams as RelativeLayout.LayoutParams
                 layoutParams.width = (minWidth + (this@Common01AdjustablePanel.getWidth()
-                        - minWidth) * widthBar!!.progress / 100) as Int
+                        - minWidth) * widthBar!!.progress / 100) .toInt()
                 layoutParams.height = (minHeight + (this@Common01AdjustablePanel.getHeight()
-                        - bottomMargin - minHeight) * heightBar!!.progress / 100) as Int
+                        - bottomMargin - minHeight) * heightBar!!.progress / 100).toInt()
                 parentLayout?.layoutParams = layoutParams
             }
 
