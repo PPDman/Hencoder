@@ -1,12 +1,16 @@
 package com.hencoder.hencoderpracticedraw6.practice
 
 import android.content.Context
+import android.graphics.Outline
 import android.graphics.Path
-import android.support.annotation.RequiresApi
+import android.os.Build
 import android.util.AttributeSet
 import android.view.View
+import android.view.ViewOutlineProvider
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.RelativeLayout
+import com.hencoder.hencoderpracticedraw6.R
 import com.hencoder.hencoderpracticedraw6.Utils
 
 class Practice01Translation : RelativeLayout {
@@ -14,8 +18,8 @@ class Practice01Translation : RelativeLayout {
     var imageView: ImageView? = null
 
     constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?) : super(context, attrs) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?, defStyleAttr: Int) : super(
+    constructor(context: Context?,  attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
         context,
         attrs,
         defStyleAttr
@@ -26,7 +30,7 @@ class Practice01Translation : RelativeLayout {
         super.onAttachedToWindow()
         animateBt = findViewById<View>(R.id.animateBt) as Button?
         imageView = findViewById<View>(R.id.imageView) as ImageView?
-        if (VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
             // 给音乐图标加上合适的阴影
             imageView!!.outlineProvider = MusicOutlineProvider()
         }
@@ -38,7 +42,6 @@ class Practice01Translation : RelativeLayout {
     /**
      * 为音乐图标设置三角形的 Outline。
      */
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     internal inner class MusicOutlineProvider : ViewOutlineProvider() {
         var path = Path()
         override fun getOutline(view: View, outline: Outline) {

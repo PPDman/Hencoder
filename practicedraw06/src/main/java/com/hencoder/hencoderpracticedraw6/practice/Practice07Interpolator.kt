@@ -2,14 +2,18 @@ package com.hencoder.hencoderpracticedraw6.practice
 
 import android.content.Context
 import android.graphics.Path
-import android.support.v4.view.animation.FastOutLinearInInterpolator
 import android.util.AttributeSet
 import android.view.View
-import android.view.animation.DecelerateInterpolator
-import android.view.animation.Interpolator
+import android.view.animation.*
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Spinner
+import androidx.core.view.animation.PathInterpolatorCompat
+import androidx.interpolator.view.animation.FastOutLinearInInterpolator
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
+import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
+import com.hencoder.hencoderpracticedraw6.R
 import com.hencoder.hencoderpracticedraw6.Utils
 
 /**
@@ -24,8 +28,8 @@ class Practice07Interpolator : LinearLayout {
     var interpolatorPath: Path? = null
 
     constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?) : super(context, attrs) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?, defStyleAttr: Int) : super(
+    constructor(context: Context?,attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context?,  attrs: AttributeSet?, defStyleAttr: Int) : super(
         context,
         attrs,
         defStyleAttr

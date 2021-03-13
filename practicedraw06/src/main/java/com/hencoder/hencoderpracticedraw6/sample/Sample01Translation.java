@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Outline;
 import android.graphics.Path;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewOutlineProvider;
@@ -13,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import androidx.annotation.Nullable;
 import com.hencoder.hencoderpracticedraw6.R;
 import com.hencoder.hencoderpracticedraw6.Utils;
 
@@ -87,7 +86,6 @@ public class Sample01Translation extends RelativeLayout {
     /**
      * 为音乐图标设置三角形的 Outline。
      */
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     class MusicOutlineProvider extends ViewOutlineProvider {
         Path path = new Path();
 

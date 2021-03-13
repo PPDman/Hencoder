@@ -18,8 +18,8 @@ class Practice08ObjectAnimatorView : View {
     var progress = 0f
 
     constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?) : super(context, attrs) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?, defStyleAttr: Int) : super(
+    constructor(context: Context?,  attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context?,  attrs: AttributeSet?, defStyleAttr: Int) : super(
         context,
         attrs,
         defStyleAttr
@@ -39,8 +39,7 @@ class Practice08ObjectAnimatorView : View {
         paint.color = Color.WHITE
         paint.style = Paint.Style.FILL
         canvas.drawText(
-            progress as Int.toString
-            () + "%",
+            "$progress%",
             centerX,
             centerY - (paint.ascent() + paint.descent()) / 2,
             paint

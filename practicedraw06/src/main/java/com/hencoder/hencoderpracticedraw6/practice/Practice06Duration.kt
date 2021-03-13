@@ -15,8 +15,8 @@ class Practice06Duration : LinearLayout {
     var duration = 300
 
     constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?) : super(context, attrs) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?, defStyleAttr: Int) : super(
+    constructor(context: Context?,  attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context?,attrs: AttributeSet?, defStyleAttr: Int) : super(
         context,
         attrs,
         defStyleAttr
