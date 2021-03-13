@@ -8,11 +8,11 @@ import android.view.View
 
 class Practice02HsvEvaluatorView : View {
     var paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    var color = -0x10000
+    var color1 = -0x10000
 
     constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?) : super(context, attrs) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?, defStyleAttr: Int) : super(
+    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context?,  attrs: AttributeSet?, defStyleAttr: Int) : super(
         context,
         attrs,
         defStyleAttr
@@ -20,11 +20,11 @@ class Practice02HsvEvaluatorView : View {
     }
 
     fun getColor(): Int {
-        return color
+        return color1
     }
 
     fun setColor(color: Int) {
-        this.color = color
+        this.color1 = color
         invalidate()
     }
 
@@ -32,7 +32,7 @@ class Practice02HsvEvaluatorView : View {
         super.onDraw(canvas)
         val width = width
         val height = height
-        paint.color = color
+        paint.color = color1
         canvas.drawCircle(
             (width / 2).toFloat(),
             (height / 2).toFloat(),

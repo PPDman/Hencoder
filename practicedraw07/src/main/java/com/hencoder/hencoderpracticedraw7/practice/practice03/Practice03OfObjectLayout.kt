@@ -31,7 +31,7 @@ class Practice03OfObjectLayout : RelativeLayout {
         animateBt!!.setOnClickListener {
             val animator = ObjectAnimator.ofObject(
                 view, "position",
-                PointFEvaluator(), PointF(0, 0), PointF(1, 1)
+                PointFEvaluator(), PointF(0f, 0f), PointF(1f, 1f)
             )
             animator.interpolator = LinearInterpolator()
             animator.duration = 1000

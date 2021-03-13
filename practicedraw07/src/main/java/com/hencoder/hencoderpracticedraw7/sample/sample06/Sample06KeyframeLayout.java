@@ -4,12 +4,12 @@ import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.content.Context;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.hencoder.hencoderpracticedraw7.R;
 
 public class Sample06KeyframeLayout extends RelativeLayout {

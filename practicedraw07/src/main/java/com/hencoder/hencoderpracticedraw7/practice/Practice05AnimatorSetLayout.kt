@@ -27,7 +27,7 @@ class Practice05AnimatorSetLayout : RelativeLayout {
         view = findViewById(R.id.objectAnimatorView)
         animateBt = findViewById<View>(R.id.animateBt) as Button
         animateBt!!.setOnClickListener {
-            view.setTranslationX(-200f)
+            view?.translationX = -200f
             val animator1 = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f)
             val animator2 = ObjectAnimator.ofFloat(view, "translationX", -200f, 200f)
             val animator3 = ObjectAnimator.ofFloat(view, "rotation", 0f, 1080f)

@@ -8,13 +8,13 @@ import com.hencoder.hencoderpracticedraw7.Utils
 
 class Practice06KeyframeView : View {
     val radius = Utils.dpToPixel(80f)
-    var progress = 0f
+    var progress1 = 0f
     var arcRectF = RectF()
     var paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?) : super(context, attrs) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?, defStyleAttr: Int) : super(
+    constructor(context: Context?,  attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context?,  attrs: AttributeSet?, defStyleAttr: Int) : super(
         context,
         attrs,
         defStyleAttr
@@ -22,11 +22,11 @@ class Practice06KeyframeView : View {
     }
 
     fun getProgress(): Float {
-        return progress
+        return progress1
     }
 
     fun setProgress(progress: Float) {
-        this.progress = progress
+        this.progress1 = progress
         invalidate()
     }
 
@@ -39,12 +39,11 @@ class Practice06KeyframeView : View {
         paint.strokeCap = Paint.Cap.ROUND
         paint.strokeWidth = Utils.dpToPixel(15f)
         arcRectF[centerX - radius, centerY - radius, centerX + radius] = centerY + radius
-        canvas.drawArc(arcRectF, 135f, progress * 2.7f, false, paint)
+        canvas.drawArc(arcRectF, 135f, progress1 * 2.7f, false, paint)
         paint.color = Color.WHITE
         paint.style = Paint.Style.FILL
         canvas.drawText(
-            progress as Int.toString
-            () + "%",
+            "$progress1%",
             centerX,
             centerY - (paint.ascent() + paint.descent()) / 2,
             paint

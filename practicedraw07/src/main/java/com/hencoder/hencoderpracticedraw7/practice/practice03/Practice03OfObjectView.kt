@@ -8,11 +8,11 @@ import com.hencoder.hencoderpracticedraw7.Utils
 
 class Practice03OfObjectView : View {
     var paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    var position = PointF()
+    var position1 = PointF()
 
     constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?) : super(context, attrs) {}
-    constructor(context: Context?, @Nullable attrs: AttributeSet?, defStyleAttr: Int) : super(
+    constructor(context: Context?,  attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context?,attrs: AttributeSet?, defStyleAttr: Int) : super(
         context,
         attrs,
         defStyleAttr
@@ -20,12 +20,12 @@ class Practice03OfObjectView : View {
     }
 
     fun getPosition(): PointF {
-        return position
+        return position1
     }
 
     fun setPosition(position: PointF?) {
         if (position != null) {
-            this.position.set(position)
+            this.position1.set(position)
             invalidate()
         }
     }
@@ -39,8 +39,8 @@ class Practice03OfObjectView : View {
         val width = width - innerPaddingLeft - innterPaddingRight - RADIUS * 2
         val height = height - innterPaddingTop - innterPaddingBottom - RADIUS * 2
         canvas.drawCircle(
-            innerPaddingLeft + RADIUS + width * position.x,
-            innterPaddingTop + RADIUS + height * position.y,
+            innerPaddingLeft + RADIUS + width * position1.x,
+            innterPaddingTop + RADIUS + height * position1.y,
             RADIUS,
             paint
         )
