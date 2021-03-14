@@ -29,7 +29,7 @@ class Common01AdjustablePanel : RelativeLayout {
     ) {
     }
 
-    protected override fun onAttachedToWindow() {
+     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         parentLayout = findViewById<FrameLayout>(R.id.parentLayout)
         widthBar = findViewById(R.id.widthBar)

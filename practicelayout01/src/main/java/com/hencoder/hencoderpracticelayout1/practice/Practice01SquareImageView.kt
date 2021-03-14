@@ -31,5 +31,12 @@ class Practice01SquareImageView : ImageView {
         // 然后通过计算，让宽度和高度一致
 
         // 再用 setMeasuredDimension(width, height) 来保存最终的宽度和高度
+        var width=measuredWidth
+        var height=measuredHeight
+        if (width>height)
+            width=height
+        else
+            height=width
+        setMeasuredDimension(width,height)
     }
 }
