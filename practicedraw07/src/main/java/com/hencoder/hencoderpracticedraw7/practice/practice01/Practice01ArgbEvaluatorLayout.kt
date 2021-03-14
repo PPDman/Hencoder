@@ -1,5 +1,6 @@
 package com.hencoder.hencoderpracticedraw7.practice.practice01
 
+import android.animation.ArgbEvaluator
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.util.AttributeSet
@@ -29,6 +30,7 @@ class Practice01ArgbEvaluatorLayout : RelativeLayout {
         animateBt!!.setOnClickListener {
             val animator = ObjectAnimator.ofInt(view, "color", -0x10000, -0xff0100)
             // 在这里使用 ObjectAnimator.setEvaluator() 来设置 ArgbEvaluator，修复闪烁问题
+            animator.setEvaluator(ArgbEvaluator())
             animator.interpolator = LinearInterpolator()
             animator.duration = 2000
             animator.start()

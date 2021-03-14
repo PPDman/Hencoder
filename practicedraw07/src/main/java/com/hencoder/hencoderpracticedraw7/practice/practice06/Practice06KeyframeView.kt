@@ -8,7 +8,7 @@ import com.hencoder.hencoderpracticedraw7.Utils
 
 class Practice06KeyframeView : View {
     val radius = Utils.dpToPixel(80f)
-    var progress1 = 0f
+    var progress1 = 0
     var arcRectF = RectF()
     var paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
@@ -22,11 +22,11 @@ class Practice06KeyframeView : View {
     }
 
     fun getProgress(): Float {
-        return progress1
+        return progress1.toFloat()
     }
 
     fun setProgress(progress: Float) {
-        this.progress1 = progress
+        this.progress1 = progress.toInt()
         invalidate()
     }
 

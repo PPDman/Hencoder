@@ -40,9 +40,13 @@ class Practice03OfObjectLayout : RelativeLayout {
     }
 
     private inner class PointFEvaluator : TypeEvaluator<PointF> {
+        val pointF=PointF()
         // 重写 evaluate() 方法，让 PointF 可以作为属性来做动画
         override fun evaluate(fraction: Float, startValue: PointF, endValue: PointF): PointF {
-            return startValue
+            val x=startValue.x+(fraction*(endValue.x-startValue.x))
+            var y=startValue.y+(fraction*(endValue.y-startValue.y))
+            pointF.set(x,y)
+            return pointF
         }
     }
 }
