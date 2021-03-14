@@ -36,7 +36,7 @@ class Practice07Interpolator : LinearLayout {
     ) {
     }
 
-    protected override fun onAttachedToWindow() {
+    override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         spinner = findViewById<View>(R.id.interpolatorSpinner) as Spinner?
         animateBt = findViewById<View>(R.id.animateBt) as Button?

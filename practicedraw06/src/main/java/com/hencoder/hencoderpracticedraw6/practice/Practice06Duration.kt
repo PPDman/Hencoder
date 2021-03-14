@@ -6,13 +6,15 @@ import android.view.View
 import android.widget.*
 import android.widget.SeekBar.OnSeekBarChangeListener
 import com.hencoder.hencoderpracticedraw6.R
+import com.hencoder.hencoderpracticedraw6.Utils
 
 class Practice06Duration : LinearLayout {
     var durationSb: SeekBar? = null
     var durationValueTv: TextView? = null
     var animateBt: Button? = null
     var imageView: ImageView? = null
-    var duration = 300
+    var duration:Long = 300L
+    var translationState=0
 
     constructor(context: Context?) : super(context) {}
     constructor(context: Context?,  attrs: AttributeSet?) : super(context, attrs) {}
@@ -32,7 +34,7 @@ class Practice06Duration : LinearLayout {
         durationSb!!.progress = 1
         durationSb!!.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                duration = progress * 300
+                duration = progress * 300L
                 durationValueTv!!.text = context.getString(R.string.ms_with_value, duration)
             }
 
@@ -43,6 +45,15 @@ class Practice06Duration : LinearLayout {
         imageView = findViewById<View>(R.id.imageView) as ImageView
         animateBt!!.setOnClickListener {
             // TODO 在这里处理点击事件，执行动画。记得使用 `setDuration(duration)` 来设置动画的时长。
+            when (translationState) {
+                0->imageView?.animate()?.translationX(Utils.dpToPixel(100f))?.duration=duration
+                1->imageView?.animate()?.translationX(0f)?.duration=duration
+            }
+            if (translationState < 1) {
+                translationState++
+            }else{
+                translationState=0
+            }
         }
     }
 }

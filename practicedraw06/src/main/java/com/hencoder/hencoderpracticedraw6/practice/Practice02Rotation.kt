@@ -9,6 +9,7 @@ import com.hencoder.hencoderpracticedraw6.R
 class Practice02Rotation : RelativeLayout {
     var animateBt: Button? = null
     var imageView: ImageView? = null
+    var state=0
 
     constructor(context: Context?) : super(context) {}
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {}
@@ -24,7 +25,19 @@ class Practice02Rotation : RelativeLayout {
         animateBt = findViewById<View>(R.id.animateBt) as Button
         imageView = findViewById<View>(R.id.imageView) as ImageView
         animateBt!!.setOnClickListener {
-            // // TODO 在这里处理点击事件，通过 View.animate().rotation/X/Y() 来让 View 旋转
+          imageView?.let {
+              when (state) {
+                  0-> it.animate().rotation(180f)
+                  1-> it.animate().rotation(0f)
+                  2-> it.animate().rotationX(180f)
+                  3-> it.animate().rotationX(0f)
+                  4-> it.animate().rotationY(180f)
+                  5-> it.animate().rotationY(0f)
+              }
+              state++
+              if (state==6)
+                  state=0
+          }
         }
     }
 }

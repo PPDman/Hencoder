@@ -15,7 +15,7 @@ class Practice08ObjectAnimatorView : View {
     var paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     // TODO 为 progress 添加 getter 和 setter 方法（setter 方法记得加 invalidate()）
-    var progress = 0f
+    var progress1 = 0
 
     constructor(context: Context?) : super(context) {}
     constructor(context: Context?,  attrs: AttributeSet?) : super(context, attrs) {}
@@ -26,7 +26,15 @@ class Practice08ObjectAnimatorView : View {
     ) {
     }
 
-    public override fun onDraw(canvas: Canvas) {
+    fun getProgress(): Int {
+        return progress1
+    }
+
+    fun setProgress(progress: Int) {
+        this.progress1 = progress
+        invalidate()
+    }
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val centerX = (width / 2).toFloat()
         val centerY = (height / 2).toFloat()
@@ -35,11 +43,11 @@ class Practice08ObjectAnimatorView : View {
         paint.strokeCap = Paint.Cap.ROUND
         paint.strokeWidth = Utils.dpToPixel(15f)
         arcRectF[centerX - radius, centerY - radius, centerX + radius] = centerY + radius
-        canvas.drawArc(arcRectF, 135f, progress * 2.7f, false, paint)
+        canvas.drawArc(arcRectF, 135f, progress1 * 2.7f, false, paint)
         paint.color = Color.WHITE
         paint.style = Paint.Style.FILL
         canvas.drawText(
-            "$progress%",
+            "${progress1}%",
             centerX,
             centerY - (paint.ascent() + paint.descent()) / 2,
             paint

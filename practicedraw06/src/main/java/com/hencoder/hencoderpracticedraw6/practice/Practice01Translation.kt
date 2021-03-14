@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Outline
 import android.graphics.Path
 import android.os.Build
+import android.os.Build.VERSION
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewOutlineProvider
@@ -17,6 +18,8 @@ class Practice01Translation : RelativeLayout {
     var animateBt: Button? = null
     var imageView: ImageView? = null
 
+    var translationStateCount = if (VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) 6 else 4
+    var translationState = 0
     constructor(context: Context?) : super(context) {}
     constructor(context: Context?,  attrs: AttributeSet?) : super(context, attrs) {}
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
@@ -26,7 +29,7 @@ class Practice01Translation : RelativeLayout {
     ) {
     }
 
-    protected override fun onAttachedToWindow() {
+    override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         animateBt = findViewById<View>(R.id.animateBt) as Button?
         imageView = findViewById<View>(R.id.imageView) as ImageView?
@@ -35,7 +38,22 @@ class Practice01Translation : RelativeLayout {
             imageView!!.outlineProvider = MusicOutlineProvider()
         }
         animateBt!!.setOnClickListener {
-            // TODO 在这里处理点击事件，通过 View.animate().translationX/Y/Z() 来让 View 平移
+            when (translationState) {
+                0 -> imageView?.animate()?.translationX(Utils.dpToPixel(100f))
+                1 -> imageView?.animate()?.translationX(0f)
+                2 -> imageView?.animate()?.translationY(Utils.dpToPixel(150f))
+                3 -> imageView?.animate()?.translationY(0f)
+                4 -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    imageView?.animate()?.translationZ(Utils.dpToPixel(15f))
+                }
+                5 -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    imageView?.animate()?.translationZ(Utils.dpToPixel(0f))
+                }
+            }
+            translationState++
+            if(translationState == translationStateCount){
+                translationState=0
+            }
         }
     }
 
